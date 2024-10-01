@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import ButtonPannel from "./btn components/ButtonPannel";
+import {useState} from "react";
+import ImageView from "./imagecomponents/ImageView";
 
 function App() {
+  const[status,setStatus]=useState("")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ButtonPannel send={(a)=>{setStatus(a)}}/>
+      <ImageView status={status}/>
+      
     </div>
   );
 }
